@@ -14,6 +14,12 @@ async function getPosts() {
       },
     },
   });
+
+  console.log(
+    "Full post data with authors:",
+    JSON.stringify(allPosts, null, 2)
+  );
+
   return allPosts;
 }
 

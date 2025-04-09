@@ -10,14 +10,16 @@ export default function AddPost() {
 
   async function sendPost(event) {
     event.preventDefault();
-
     try {
       await fetch("/api/add-post", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ title: title, content: content }),
+        body: JSON.stringify({
+          title: title,
+          content: content,
+        }),
       });
       router.refresh();
     } catch (e) {
